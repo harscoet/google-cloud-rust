@@ -313,7 +313,7 @@ impl Client {
         };
 
         //use storage api instead of rest API
-        if option.enable_storage_read && (page_token.is_none() || page_token.as_ref().unwrap().is_empty()) {
+        if option.enable_storage_read {
             tracing::trace!("use storage read api for query {:?}", result.job_reference);
             let job = self
                 .job_client
